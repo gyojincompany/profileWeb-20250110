@@ -8,6 +8,7 @@
 <title>Profile Web</title>
 </head>
 <body>
+	<center>
 	<table border="0" cellpadding="20" cellspacing="0">
 		<tr>
 			<td align="center">
@@ -25,35 +26,35 @@
 			<td align="center">
 				<table border="0" cellpadding="10" cellspacing="0">
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">J</span><span class="skill_text02">AVA</span>
 						</td>
-						<td rowspan="6">
+						<td rowspan="6" class="image_box">
 							<img src="../resources/img/springboot.jpg">
 						</td>
 					</tr>
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">J</span><span class="skill_text02">SP</span>
 						</td>
 					</tr>
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">S</span><span class="skill_text02">PRINGBOOT</span>
 						</td>
 					</tr>
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">J</span><span class="skill_text02">AVASCRIPT</span>
 						</td>
 					</tr>
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">H</span><span class="skill_text02">TML5&CSS</span>
 						</td>
 					</tr>
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">D</span><span class="skill_text02">ATABASE</span>
 						</td>
 					</tr>
@@ -61,5 +62,6 @@
 			</td>
 		</tr>
 	</table>
+	</center>
 </body>
 </html>
