@@ -16,7 +16,7 @@
 		</tr>
 		<tr class="footer_line" height="30" align="center">
 			<td>
-				<span class="footer_text">Copyright 2024 ⓒ GyoJinCompany. All Rights Reserved</span>
+				<span class="footer_text">Copyright 2025 ⓒ GyoJinCompany. All Rights Reserved</span>
 			</td>	
 		</tr>
 		<tr class="footer_line" height="30" align="center">
