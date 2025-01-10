@@ -8,6 +8,8 @@
 <title>Profile Web</title>
 </head>
 <body>
+	<%@ include file="include/header.jsp" %>
+
 	<center>
 	<table border="0" cellpadding="20" cellspacing="0">
 		<tr>
