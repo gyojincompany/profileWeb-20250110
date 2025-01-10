@@ -50,7 +50,7 @@
 				&nbsp;
 			</td>
 		</tr>
-		<tr height="30">
+		<tr height="20">
 			<td>
 				&nbsp;
 			</td>
