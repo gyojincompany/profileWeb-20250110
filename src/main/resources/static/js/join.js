@@ -49,3 +49,17 @@ function joinCheck() {
 		
 	return true;	
 }
+
+function idcheck() {
+		if(document.joinForm.mid.value.length == 0) {
+				alert("아이디는 필수 입력사항입니다.");
+				document.joinForm.mid.focus();
+				return false;				
+		}
+		var url = "idcheck";
+	    var idvalue = document.getElementById("joinid").value;
+
+	    window.location.href = "idcheck?idcheck="+idvalue;
+		
+}
+

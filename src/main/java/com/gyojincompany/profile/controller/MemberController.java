@@ -59,28 +59,16 @@ public class MemberController {
 		
 		int idFlag = mDao.idCheckDao(idcheck);//1이 반환되면 이미 가입하려는 아이디가 존재->가입불가
 		
-		if(idFlag == 1) {
-			model.addAttribute("msg", "가입하시려는 아이디가 존재합니다!다시 확인하신 후 가입하세요.");
-			model.addAttribute("url", "join");
-			
-			return "alert/alert";
-		} else {
-			// java로 자바스크립트 경고창 띄우기
-			try {
-				response.setContentType("text/html;charset=utf-8");//경고창 텍스트를 utf-8로 인코딩
-				response.setCharacterEncoding("utf-8");
-				PrintWriter printWriter = response.getWriter();
-				printWriter.println("<script>alert('"+"가입 가능한 아이디 입니다."+"');</script>");
-				printWriter.flush();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			model.addAttribute("joinId", idcheck);
-		}
 		
-		return "join";
+		if(idFlag == 1) {			
+			model.addAttribute("msg", "가입하시려는 아이디가 존재합니다!다시 확인하신 후 가입하세요.");		
+			
+			return "alert/alert2";
+		} else {
+			model.addAttribute("msg", "가입 가능한 아이디 입니다. 계속 가입을 진행해 주세요.");	
+			
+			return "alert/alert2";
+		}
 	}
 	
 	@PostMapping(value = "/loginOk")
@@ -93,30 +81,15 @@ public class MemberController {
 		int loginFlag = mDao.loginDao(mid, mpw);//1이면 로그인 성공, 0이면 실패
 		
 		if(loginFlag == 1) {//로그인 성공
-			try {
-				response.setContentType("text/html;charset=utf-8");//경고창 텍스트를 utf-8로 인코딩
-				response.setCharacterEncoding("utf-8");
-				PrintWriter printWriter = response.getWriter();
-				printWriter.println("<script>alert('"+"안녕하세요. 로그인 성공하셨습니다."+"');</script>");
-				printWriter.flush();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			model.addAttribute("msg", "반갑습니다. "+mid+"님 로그인 성공하셨습니다.");		
+			model.addAttribute("url", "index");
 			session.setAttribute("sessionid", mid);
-		} else {
-			model.addAttribute("msg", "아이디 또는 비밀번호가 잘못 되었습니다.다시 확인하신 후 로그인하세요.");
-			model.addAttribute("url", "login");
-			
 			return "alert/alert";
+		} else {
+			model.addAttribute("msg", "아이디 또는 비밀번호가 잘못 되었습니다.다시 확인하신 후 로그인하세요.");			
+			
+			return "alert/alert2";
 		}
 		
-		return "index";
 	}
-	
-	
-	
-	
-	
-
 }
