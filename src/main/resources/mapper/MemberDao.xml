@@ -19,4 +19,9 @@
 		SELECT * FROM profilemember WHERE mid=#{param1}
 	</select>
 	
+	<!-- 아이디와 비밀번호로 로그인 체크 -->
+	<select id="loginDao" resultType="int">
+		SELECT count(*) FROM profilemember WHERE mid=#{param1} AND mpw=#{param2}
+	</select>
+	
 </mapper>   

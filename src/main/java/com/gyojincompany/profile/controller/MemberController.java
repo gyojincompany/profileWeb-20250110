@@ -14,6 +14,7 @@ import com.gyojincompany.profile.dao.MemberDao;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class MemberController {
@@ -81,5 +82,41 @@ public class MemberController {
 		
 		return "join";
 	}
+	
+	@PostMapping(value = "/loginOk")
+	public String loginOk(HttpServletRequest request, Model model, HttpSession session, HttpServletResponse response) {
+		
+		String mid = request.getParameter("mid");
+		String mpw = request.getParameter("mpw");
+		
+		MemberDao mDao = sqlSession.getMapper(MemberDao.class);
+		int loginFlag = mDao.loginDao(mid, mpw);//1이면 로그인 성공, 0이면 실패
+		
+		if(loginFlag == 1) {//로그인 성공
+			try {
+				response.setContentType("text/html;charset=utf-8");//경고창 텍스트를 utf-8로 인코딩
+				response.setCharacterEncoding("utf-8");
+				PrintWriter printWriter = response.getWriter();
+				printWriter.println("<script>alert('"+"안녕하세요. 로그인 성공하셨습니다."+"');</script>");
+				printWriter.flush();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			session.setAttribute("sessionid", mid);
+		} else {
+			model.addAttribute("msg", "아이디 또는 비밀번호가 잘못 되었습니다.다시 확인하신 후 로그인하세요.");
+			model.addAttribute("url", "login");
+			
+			return "alert/alert";
+		}
+		
+		return "index";
+	}
+	
+	
+	
+	
+	
 
 }
