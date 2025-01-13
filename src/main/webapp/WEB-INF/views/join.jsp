@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../resources/css/title.css">
 <link rel="stylesheet" href="../resources/css/content.css">
+<script type="text/javascript" src="../resources/js/join.js"></script>
 <title>Profile Web</title>
 </head>
 <body>
@@ -27,7 +28,7 @@
 		<tr>
 			<td align="center" height="500">
 				<table border="0" cellpadding="10" cellspacing="0" width="60%" class="content_box" height="530">
-				<form action="joinOk" method="post" name="joinForm">
+				<form action="joinOk" method="post" name="joinForm" onsubmit="return joinCheck()">
 					<tr>
 						<td>
 							&nbsp;
