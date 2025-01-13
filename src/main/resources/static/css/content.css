@@ -40,3 +40,24 @@ input.content_btn:hover {
 	padding: 10px;
 	cursor: pointer;
 }
+
+input.check_btn {
+	border: 1px solid #000B58;
+	width: 100px;
+	height: 35px;
+	background-color: #003161;
+	font-size: 15px;
+	color: #FFFFFF;
+	padding:5px;
+}
+
+input.check_btn:hover {
+	border: 1px solid #000B58;
+	width: 100px;
+	height: 35px;
+	background-color: #0683ff;
+	font-size: 15px;
+	color: #FFFFFF;
+	padding:5px;
+	cursor: pointer;
+}

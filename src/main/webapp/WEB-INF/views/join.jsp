@@ -29,20 +29,8 @@
 			<td align="center" height="500">
 				<table border="0" cellpadding="10" cellspacing="0" width="60%" class="content_box" height="530">
 				<form action="joinOk" method="post" name="joinForm" onsubmit="return joinCheck()">
-					<tr>
-					<!-- 
-						<form action="idcheck">
-						<td align="right">
-							<span class="content_text">아이디 중복체크 :</span>
-						</td>
-						<form action="joinOk" method="post" name="joinForm" onsubmit="return joinCheck()">
-						<td>
-							<input type="text" name="idcheck" class="input_box">
-							<input type="submit" value="중복체크">
-						</form>
-						</td>
-					 -->
-					 <td>&nbsp;</td>
+					<tr>					
+					 <td colspan="2">&nbsp;</td>
 					</tr>
 					<tr>
 						<td align="right" width="40%">
@@ -50,7 +38,7 @@
 						</td>
 						<td>
 							<input type="text" id="joinid" name="mid" value="${joinId }" class="input_box">
-							<input type="button" value="중복체크" onclick="idcheck()">
+							<input type="button" value="중복체크" onclick="idcheck()" class="check_btn">
 						</td>
 					</tr>
 					<tr>
@@ -86,7 +74,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td>
+						<td colspan="2">
 							&nbsp;
 						</td>
 					</tr>
