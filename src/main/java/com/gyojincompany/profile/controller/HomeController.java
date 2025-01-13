@@ -23,5 +23,10 @@ public class HomeController {
 		return "join";
 	}
 	
+	@GetMapping(value = "/login")
+	public String login() {
+		return "login";
+	}
+	
 	
 }
