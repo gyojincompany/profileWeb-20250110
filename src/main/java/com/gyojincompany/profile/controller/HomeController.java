@@ -38,5 +38,10 @@ public class HomeController {
 		return "contact";
 	}
 	
+	@GetMapping(value = "/board")
+	public String board() {
+		return "board";
+	}
+	
 	
 }

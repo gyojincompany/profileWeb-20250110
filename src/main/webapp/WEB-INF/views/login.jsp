@@ -73,8 +73,7 @@
 						<td colspan="2" align="center">
 							<input type="submit" value="회원가입" class="content_btn">
 							<input type="button" value="로그인" class="content_btn">
-						</td>
-						
+						</td>						
 					</tr>
 				</form>
 				</table>
