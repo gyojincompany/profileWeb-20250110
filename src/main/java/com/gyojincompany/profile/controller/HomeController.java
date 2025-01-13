@@ -28,5 +28,15 @@ public class HomeController {
 		return "login";
 	}
 	
+	@GetMapping(value = "/profile")
+	public String profile() {
+		return "profile";
+	}
+	
+	@GetMapping(value = "/contact")
+	public String contact() {
+		return "contact";
+	}
+	
 	
 }

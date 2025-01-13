@@ -29,50 +29,42 @@
 				<table border="0" cellpadding="10" cellspacing="0" width="60%" class="content_box" height="530">
 				<form action="loginOk" method="post" name="loginForm">
 					<tr>
-						<td colspan="2">
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
-						<td align="right" width="40%">
-							<span class="content_text">아이디 :</span>
-						</td>
 						<td>
-							<input type="text" name="mid" class="input_box">
-						</td>
-					</tr>
-					<tr>
-						<td align="right">
-							<span class="content_text">비밀번호 :</span>
-						</td>
-						<td>
-							<input type="password" name="mpw" class="input_box">
-						</td>
-					</tr>					
-					<tr>
-						<td colspan="2">
 							&nbsp;
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2">
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<span class="content_text">
+								안녕하세요 Web Application 백엔드 개발자 이교진입니다.<br>
+								보시고 계신 페이지는 SpringBoot Framework으로 개발되었습니다.<br>
+								웹 어플리케이션 개발 관련하여 궁금하신 점은 luckyred@gmail.com을 이용해주세요.
+							</span>
+						</td>						
+					</tr>								
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
 							&nbsp;
 						</td>
 					</tr>
 					<tr>						
-						<td colspan="2" align="center">
-							<input type="submit" value="회원가입" class="content_btn">
-							<input type="button" value="로그인" class="content_btn">
+						<td>
+							&nbsp;
 						</td>
 						
 					</tr>
