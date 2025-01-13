@@ -73,7 +73,7 @@
 					<tr>						
 						<td colspan="2" align="center">
 							<input type="submit" value="로그인" class="content_btn">
-							<input type="button" value="회원가입" class="content_btn">
+							<input type="button" value="회원가입" class="content_btn" onclick="javascript:location.href='join'">
 						</td>						
 					</tr>
 				</form>

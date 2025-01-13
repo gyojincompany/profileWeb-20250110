@@ -23,6 +23,12 @@ function joinCheck() {
 			document.joinForm.mpw.focus();
 			return false;
 		}
+	if(document.joinForm.mpw_check.value.length == 0) {
+			alert("비밀번호 확인은 필수사항 입니다.");
+			document.joinForm.mpw_check.focus();
+			return false;
+		}	
+			
 	if(document.joinForm.mpw.value != document.joinForm.mpw_check.value) {
 			alert("입력하신 비밀번호와 비밀번호 확인이 일치하지 않습니다.");
 			document.joinForm.mpw_check.focus();

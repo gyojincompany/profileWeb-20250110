@@ -28,10 +28,17 @@
 		<tr>
 			<td align="center" height="500">
 				<table border="0" cellpadding="10" cellspacing="0" width="60%" class="content_box" height="530">
-				<form action="joinOk" method="post" name="joinForm" onsubmit="return joinCheck()">
+				
 					<tr>
+						<form action="idcheck">
+						<td align="right">
+							<span class="content_text">아이디 중복체크 :</span>
+						</td>
+						<form action="joinOk" method="post" name="joinForm" onsubmit="return joinCheck()">
 						<td>
-							&nbsp;
+							<input type="text" name="idcheck" class="input_box">
+							<input type="submit" value="중복체크">
+						</form>
 						</td>
 					</tr>
 					<tr>
@@ -39,7 +46,7 @@
 							<span class="content_text">아이디 :</span>
 						</td>
 						<td>
-							<input type="text" name="mid" class="input_box">
+							<input type="text" name="mid" value="${joinId }" class="input_box">							
 						</td>
 					</tr>
 					<tr>
@@ -47,7 +54,7 @@
 							<span class="content_text">비밀번호 :</span>
 						</td>
 						<td>
-							<input type="password" name="mpw" class="input_box">
+							<input type="password" name="mpw" value="${joinPw }" class="input_box">
 						</td>
 					</tr>
 					<tr>
@@ -63,7 +70,7 @@
 							<span class="content_text">회원이름 :</span>
 						</td>
 						<td>
-							<input type="text" name="mname" class="input_box">
+							<input type="text" name="mname" value="${joinName }" class="input_box">
 						</td>
 					</tr>
 					<tr>
@@ -71,7 +78,7 @@
 							<span class="content_text">이메일 :</span>
 						</td>
 						<td>
-							<input type="text" name="memail" class="input_box">
+							<input type="text" name="memail" value="${joinEmail }"  class="input_box">
 						</td>
 					</tr>
 					<tr>
@@ -82,7 +89,7 @@
 					<tr>						
 						<td colspan="2" align="center">
 							<input type="submit" value="회원가입" class="content_btn">
-							<input type="button" value="로그인" class="content_btn">
+							<input type="button" value="로그인" class="content_btn" onclick="javascript:location.href='login'">
 						</td>
 						
 					</tr>
