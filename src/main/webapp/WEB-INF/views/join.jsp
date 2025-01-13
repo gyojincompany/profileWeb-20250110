@@ -10,9 +10,8 @@
 </head>
 <body>
 	<%@ include file="include/header.jsp" %>
-
-	<center>
-	<table border="0" cellpadding="20" cellspacing="0">
+	
+	<table border="0" cellpadding="20" cellspacing="0" width="100%">
 		<tr>
 			<td align="center">
 				<span class="title_text01">DEVELOPER GYOJIN's PROFILE</span>
@@ -26,8 +25,8 @@
 			
 		</tr>
 		<tr>
-			<td align="center" class="content_box" height="500">
-				<table border="0" cellpadding="10" cellspacing="0">
+			<td align="center" height="500">
+				<table border="0" cellpadding="10" cellspacing="0" width="60%" class="content_box" height="530">
 				<form action="joinOk" method="post" name="joinForm">
 					<tr>
 						<td align="right">
@@ -86,7 +85,7 @@
 			</td>
 		</tr>
 	</table>
-	</center>
+	
 	
 	<%@ include file="include/footer.jsp" %>
 </body>
