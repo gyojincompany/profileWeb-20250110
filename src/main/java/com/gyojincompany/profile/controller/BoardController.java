@@ -5,10 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import com.gyojincompany.profile.dao.BoardDao;
 import com.gyojincompany.profile.dao.MemberDao;
 import com.gyojincompany.profile.dto.MemberDto;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -38,8 +41,27 @@ public class BoardController {
 			
 			return "alert/alert";
 		}
-		
-		
 	}
+	
+	@PostMapping(value = "/writeOk")
+	public String writeOk(HttpServletRequest request, Model model) {
+		
+		String bid = request.getParameter("bid");
+		String bname = request.getParameter("bname");
+		String btitle = request.getParameter("btitle");
+		String bcontent = request.getParameter("bcontent");
+		
+		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		bDao.writeDao(bid, bname, btitle, bcontent);//글쓰기		
+		
+		return "redirect:list";
+	}
+	
+	
+	
+	
+	
+	
+	
 
 }

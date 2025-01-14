@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="../resources/css/title.css">
 <link rel="stylesheet" href="../resources/css/content.css">
 <link rel="stylesheet" href="../resources/css/board.css">
-<script type="text/javascript" src="../resources/js/join.js"></script>
+<script type="text/javascript" src="../resources/js/board.js"></script>
 <title>Profile Web</title>
 </head>
 <body>
