@@ -74,7 +74,7 @@
 					</tr>
 					<tr>						
 						<td colspan="6" align="right">
-							<input type="button" value="글쓰기" class="content_btn">							
+							<input type="button" value="글쓰기" class="content_btn" onclick="javascript:location.href='write'">							
 						</td>						
 					</tr>
 				</form>
