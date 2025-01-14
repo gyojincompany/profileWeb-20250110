@@ -56,8 +56,9 @@ function idcheck() {
 				document.joinForm.mid.focus();
 				return false;				
 		}
-		var url = "idcheck";
-	    var idvalue = document.getElementById("joinid").value;
+		
+	    //var idvalue = document.getElementById("joinid").value;
+		var idvalue = document.joinForm.mid.value;
 
 	    window.location.href = "idcheck?idcheck="+idvalue;
 		

@@ -51,23 +51,22 @@ public class MemberController {
 	}
 	
 	@GetMapping(value = "/idcheck")
-	public String idcheck(HttpServletRequest request, Model model, HttpServletResponse response) {
+	public String idcheck(HttpServletRequest request, Model model) {
 		
 		String idcheck = request.getParameter("idcheck");
 		
 		MemberDao mDao = sqlSession.getMapper(MemberDao.class);
 		
-		int idFlag = mDao.idCheckDao(idcheck);//1이 반환되면 이미 가입하려는 아이디가 존재->가입불가
-		
+		int idFlag = mDao.idCheckDao(idcheck);//1이 반환되면 이미 가입하려는 아이디가 존재->가입불가		
 		
 		if(idFlag == 1) {			
 			model.addAttribute("msg", "가입하시려는 아이디가 존재합니다!다시 확인하신 후 가입하세요.");		
 			
-			return "alert/alert2";
+			return "alert/alert2";//바로 이전 페이지로 돌아가기
 		} else {
 			model.addAttribute("msg", "가입 가능한 아이디 입니다. 계속 가입을 진행해 주세요.");	
 			
-			return "alert/alert2";
+			return "alert/alert2";//바로 이전 페이지로 돌아가기
 		}
 	}
 	
@@ -88,7 +87,7 @@ public class MemberController {
 		} else {
 			model.addAttribute("msg", "아이디 또는 비밀번호가 잘못 되었습니다.다시 확인하신 후 로그인하세요.");			
 			
-			return "alert/alert2";
+			return "alert/alert2";//바로 이전 페이지로 돌아가기
 		}
 		
 	}

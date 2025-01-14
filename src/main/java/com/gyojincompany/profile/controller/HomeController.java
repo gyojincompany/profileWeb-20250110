@@ -48,5 +48,10 @@ public class HomeController {
 		return "board";
 	}
 	
+	@GetMapping(value = "/sessionTest")
+	public String sessionTest() {
+		return "sessionTest";
+	}
+	
 	
 }
