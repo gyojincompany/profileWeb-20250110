@@ -34,7 +34,15 @@
 				&nbsp;
 			</td>
 			<td width="4%">
-				<a href="join" class="header_link"><span class="header_menu">JOIN</span></a>
+				<c:choose>
+					<c:when test="${sessionid != null }">
+						<a href="member" class="header_link"><span class="header_menu">MEMBER</span></a>
+					</c:when>
+					<c:otherwise>
+						<a href="join" class="header_link"><span class="header_menu">JOIN</span></a>
+					</c:otherwise>
+				</c:choose>
+				
 			</td>
 			<td width="1%">
 				&nbsp;
