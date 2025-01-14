@@ -71,9 +71,54 @@ public class BoardController {
 		return "board";
 	}
 	
+	@GetMapping(value = "/contentView")
+	public String contentView(HttpServletRequest request, Model model) {
+		
+		String bnum = request.getParameter("bnum");//사용자가 클릭한 글의 번호
+		
+		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		BoardDto bDto = bDao.contentViewDao(bnum);
+		
+		model.addAttribute("bDto", bDto);
+		
+		return "contentView";
+	}
+	@GetMapping(value = "/contentModify")
+	public String contentModify(HttpServletRequest request, Model model, HttpSession session) {
+		
+		String bnum = request.getParameter("bnum");//사용자가 클릭한 글의 번호
+		
+		
+		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		BoardDto bDto = bDao.contentViewDao(bnum);
+		
+		String sid = (String) session.getAttribute("sessionid");
+		
+		if(sid.equals(bDto.getBid())) {//글쓴이와 현재 로그인 중인 아이디와 비교
+			model.addAttribute("bDto", bDto);		
+			
+			return "contentModify";
+		} else {
+			
+			model.addAttribute("msg", "글을 작성한 사용자만 수정 권한이 있습니다.");
+			
+			return "alert/alert2";
+		}
+		
+		
+	}
 	
 	
-	
-	
-
+	@PostMapping(value = "/contentModifyOk")
+	public String contentModifyOk(HttpServletRequest request, Model model) {
+		
+		String bnum = request.getParameter("bnum");
+		String btitle = request.getParameter("btitle");
+		String bcontent = request.getParameter("bcontent");
+		
+		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		bDao.contentModifyDao(bnum, btitle, bcontent);//글 수정
+		
+		return "redirect:list";
+	}
 }

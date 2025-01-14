@@ -35,10 +35,43 @@ input.title_box {
 	padding: 5px;
 }
 
+input.title_box_noedit {
+	border: 0px solid #000B58;
+	background-color: #e3fdff;
+	width: 500px;
+	font-size: 20px;
+	font-family: NanumGothic, Arial;
+	padding: 5px;
+}
+
 textarea.content_box {
 	border: 1px solid #000B58;
 	width: 500px;
 	font-size: 20px;
 	font-family: NanumGothic, Arial;
 	padding: 5px;
+}
+
+textarea.content_box_noedit {
+	border: 0px solid #000B58;
+	background-color: #e3fdff;
+	width: 500px;
+	font-size: 20px;
+	font-family: NanumGothic, Arial;
+	padding: 5px;
+}
+
+a.board_link:link {
+	text-decoration: none;
+	color: inherit;
+}
+
+a.board_link:visited {
+	text-decoration: none;
+	color: #808080;	
+}
+
+a.board_link:hover {
+	font-weight: bold;
+	color: inherit;
 }

@@ -12,6 +12,28 @@
 	
 	<!-- 모든 글 가져오기 -->
 	<select id="listDao" resultType="com.gyojincompany.profile.dto.BoardDto">
-		SELECT * FROM profileboard ORDER BY bnum DESC
+		SELECT * 
+			FROM profileboard
+				ORDER BY bnum DESC
 	</select>
+	
+	<!-- 글 번호로 글 가져오기 -->
+	<select id="contentViewDao" resultType="com.gyojincompany.profile.dto.BoardDto">
+		SELECT * 
+			FROM profileboard 
+				WHERE bnum=#{param1}
+	</select>
+	
+	<!-- 글 수정하기 -->
+	<update id="contentModifyDao">
+		UPDATE profileboard 
+			SET btitle=#{param2}, bcontent=#{param3}
+				WHERE bnum=#{param1}			
+	</update>
+	
+	
+	
+	
+	
+	
 </mapper>    
