@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +29,7 @@
 		</tr>
 		<tr>
 			<td align="center" height="500">
-				<table border="1" cellpadding="10" cellspacing="0" width="60%" class="content_box" height="530">
+				<table border="0" cellpadding="10" cellspacing="0" width="60%" class="content_box" height="530">
 				<form action="loginOk" method="post" name="loginForm">
 					<tr class="board_title_tr">
 						<th class="board_title_td" width="5%">번호</th>
@@ -37,38 +39,28 @@
 						<th class="board_title_td" width="15%">등록일</th>
 						<th class="board_title_td" width="7%">조회수</th>
 					</tr>
+					<c:forEach items="${bDtos}" var="bDto">
 					<tr class="board_content_tr">
-						<td class="board_content_td" align="center">4</td>
-						<td class="board_content_td" align="center">tiger</td>
-						<td class="board_content_td" align="center">홍길동</td>
-						<td class="board_content_td">안녕하세요. 가입인사드려요.</td>
-						<td class="board_content_td" align="center">2025-01-13</td>
-						<td class="board_content_td" align="center">15</td>
+						<td class="board_content_td" align="center">${bDto.bnum }</td>
+						<td class="board_content_td" align="center">${bDto.bid}</td>
+						<td class="board_content_td" align="center">${bDto.bname}</td>
+						<td class="board_content_td">
+							<c:choose>
+								<c:when test="${fn:length(bDto.btitle) > 38}">
+									${fn:substring(bDto.btitle, 0, 38)}...
+								</c:when>
+								<c:otherwise>
+									${bDto.btitle}
+								</c:otherwise>
+							</c:choose>
+						</td>
+						<td class="board_content_td" align="center">
+							${fn:substring(bDto.bdate, 0, 10)}
+						</td>
+						<td class="board_content_td" align="center">${bDto.bhit}</td>
 					</tr>
-					<tr class="board_content_tr">
-						<td class="board_content_td" align="center">3</td>
-						<td class="board_content_td" align="center">tiger</td>
-						<td class="board_content_td" align="center">홍길동</td>
-						<td class="board_content_td">안녕하세요. 가입인사드려요.</td>
-						<td class="board_content_td" align="center">2025-01-13</td>
-						<td class="board_content_td" align="center">15</td>
-					</tr>
-					<tr class="board_content_tr">
-						<td class="board_content_td" align="center">2</td>
-						<td class="board_content_td" align="center">tiger</td>
-						<td class="board_content_td" align="center">홍길동</td>
-						<td class="board_content_td">안녕하세요. 가입인사드려요.</td>
-						<td class="board_content_td" align="center">2025-01-13</td>
-						<td class="board_content_td" align="center">15</td>
-					</tr>							
-					<tr class="board_content_tr">
-						<td class="board_content_td" align="center">1</td>
-						<td class="board_content_td" align="center">tiger</td>
-						<td class="board_content_td" align="center">홍길동</td>
-						<td class="board_content_td">안녕하세요. 가입인사드려요.</td>
-						<td class="board_content_td" align="center">2025-01-13</td>
-						<td class="board_content_td" align="center">15</td>
-					</tr>
+					</c:forEach>
+					
 					<tr>
 						<td colspan="6">&nbsp;</td>
 					</tr>

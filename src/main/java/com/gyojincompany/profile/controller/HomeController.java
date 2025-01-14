@@ -43,11 +43,6 @@ public class HomeController {
 		return "contact";
 	}
 	
-	@GetMapping(value = "/board")
-	public String board() {
-		return "board";
-	}
-	
 	@GetMapping(value = "/sessionTest")
 	public String sessionTest() {
 		return "sessionTest";

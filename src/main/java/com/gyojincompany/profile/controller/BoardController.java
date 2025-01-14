@@ -1,5 +1,7 @@
 package com.gyojincompany.profile.controller;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.gyojincompany.profile.dao.BoardDao;
 import com.gyojincompany.profile.dao.MemberDao;
+import com.gyojincompany.profile.dto.BoardDto;
 import com.gyojincompany.profile.dto.MemberDto;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -57,7 +60,16 @@ public class BoardController {
 		return "redirect:list";
 	}
 	
-	
+	@GetMapping(value = "/list")
+	public String board(HttpServletRequest request, Model model) {
+		
+		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		ArrayList<BoardDto> bDtos = bDao.listDao();//모든 글 가져오기
+		
+		model.addAttribute("bDtos", bDtos);
+		
+		return "board";
+	}
 	
 	
 	

@@ -10,4 +10,8 @@
 			VALUES (profileboard_seq.nextval, #{param1}, #{param2}, #{param3}, #{param4}, 0) 
 	</insert>
 	
+	<!-- 모든 글 가져오기 -->
+	<select id="listDao" resultType="com.gyojincompany.profile.dto.BoardDto">
+		SELECT * FROM profileboard ORDER BY bnum DESC
+	</select>
 </mapper>    
