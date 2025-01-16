@@ -121,4 +121,41 @@ public class BoardController {
 		
 		return "redirect:list";
 	}
+	
+	@GetMapping(value = "/contentDelete")
+	public String contentDelete(HttpServletRequest request, Model model, HttpSession session) {
+		
+		String bnum = request.getParameter("bnum");//삭제할 글의 번호
+		
+		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		BoardDto bDto = bDao.contentViewDao(bnum);//해당 글 번호의 모든 정보 가져오기
+		
+		String sid = (String) session.getAttribute("sessionid");//현재 로그인한 사용자의 아이디		
+		
+		if(sid.equals(bDto.getBid())) {//현재 로그인한 사용자 아이디와 글쓴사용자의 아이디 비교			
+			if(bDao.contentDeleteDao(bnum) == 1) {//참이면 삭제 성공
+				model.addAttribute("msg", "글이 성공적으로 삭제되었습니다.");
+				model.addAttribute("url", "list");
+				
+				return "alert/alert";
+			} else {
+				model.addAttribute("msg", "글 삭제가 실패하였습니다.");
+				model.addAttribute("url", "list");
+				
+				return "alert/alert";//삭제 실패시 리스트로 돌아가기
+			}
+		} else {
+			model.addAttribute("msg", "해당 글의 삭제 권한이 없습니다.");			
+			return "alert/alert2";
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 }

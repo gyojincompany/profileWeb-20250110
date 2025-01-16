@@ -31,7 +31,10 @@
 				WHERE bnum=#{param1}			
 	</update>
 	
-	
+	<!-- 글 삭제하기 -->
+	<delete id="contentDeleteDao">
+		DELETE FROM profileboard WHERE bnum=#{param1}
+	</delete>
 	
 	
 	
