@@ -31,3 +31,16 @@ function writeCheck() {
 	return true;
 	
 }
+
+function contentDelete(currPage, deleteNum) {
+	//console.log(currPage);
+	//console.log(deleteNum);
+	var deleteFlag = confirm("정말 글을 삭제하시겠습니까? 삭제된 글은 복원되지 않습니다.");
+	if(deleteFlag == true) {
+		location.href="contentDelete?pageNum="+currPage+"&bnum="+deleteNum;
+	}	
+}
+
+
+
+

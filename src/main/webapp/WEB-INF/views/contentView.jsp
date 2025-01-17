@@ -68,7 +68,7 @@
 							<c:choose>								
 								<c:when test="${sessionid != null }">
 									<input type="button" value="글수정" class="content_btn" onclick="javascript:location.href='contentModify?bnum=${bDto.bnum}'">
-									<input type="button" value="글삭제" class="content_btn" onclick="javascript:location.href='contentDelete?bnum=${bDto.bnum}'">
+									<input type="button" value="글삭제" class="content_btn" onclick="contentDelete(${currPage}, ${bDto.bnum})">
 									<input type="button" value="글목록" class="content_btn" onclick="javascript:location.href='list?pageNum=${currPage}'">
 								</c:when>
 								<c:otherwise>
