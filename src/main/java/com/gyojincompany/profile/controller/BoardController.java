@@ -77,10 +77,14 @@ public class BoardController {
 		
 		PageDto pageDto = new PageDto(total, criteria);
 		
+		//int realEndPage = (int )Math.ceil(total*1.0/criteria.getAmount());//실제 마지막 페이지
+		
 		ArrayList<BoardDto> bDtos = bDao.listDao(criteria.getAmount(), criteria.getPageNum());
 		//인수로 한페이지에 보여질 글의 갯수와 사용자가 클릭한 페이지의 번호를 입력해서 호출
 		
 		model.addAttribute("bDtos", bDtos);
+		model.addAttribute("pageDto", pageDto);
+		model.addAttribute("currentPage", criteria.getPageNum());
 		
 		return "board";
 	}

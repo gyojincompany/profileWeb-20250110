@@ -62,14 +62,29 @@
 					</tr>
 					</c:forEach>
 					
-					<tr>
-						<td colspan="6">&nbsp;</td>
-					</tr>
-					
 					<!-- 페이징 페이지 표시 -->
 					<tr>
 						<td colspan="6">
-							◀◀ ◀ 1 <a href="list?pageNum=2">2</a> <a href="list?pageNum=3">3</a> 4 5 6 7 8 9 10 ▶ ▶
+							<c:if test="${pageDto.prev }">
+							<a href="list?pageNum=1">◀◀</a>&nbsp;
+							<a href="list?pageNum=${pageDto.startPage-1}">◀</a>
+							</c:if>
+							&nbsp;&nbsp;
+							<c:forEach var="pageNumber" begin="${pageDto.startPage}" end="${pageDto.endPage }">
+								<c:choose>
+									<c:when test="${currentPage == pageNumber}">
+										<b>${pageNumber}</b>
+									</c:when>
+									<c:otherwise>
+										<a href="list?pageNum=${pageNumber}">${pageNumber}</a>&nbsp;
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>							
+							&nbsp;&nbsp;
+							<c:if test="${pageDto.next }">	
+							<a href="list?pageNum=${pageDto.endPage+1 }">▶</a>&nbsp;
+							<a href="list?pageNum=${pageDto.realEndPage}">▶▶</a>
+							</c:if>
 						</td>
 					</tr>
 					
