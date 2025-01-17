@@ -44,7 +44,7 @@
 						<td class="board_content_td" align="center">${bDto.bid}</td>
 						<td class="board_content_td" align="center">${bDto.bname}</td>
 						<td class="board_content_td">
-							<a class="board_link" href="contentView?bnum=${bDto.bnum }">
+							<a class="board_link" href="contentView?pageNum=${currentPage}&bnum=${bDto.bnum }">
 							<c:choose>
 								<c:when test="${fn:length(bDto.btitle) > 38}">
 									${fn:substring(bDto.btitle, 0, 38)}...
@@ -62,28 +62,32 @@
 					</tr>
 					</c:forEach>
 					
-					<!-- 페이징 페이지 표시 -->
+					<tr height="10">
+						<td></td>
+					</tr>
+					
+					<!-- 페이징 페이지 표시 -->					
 					<tr>
-						<td colspan="6">
+						<td colspan="6" align="center">
 							<c:if test="${pageDto.prev }">
-							<a href="list?pageNum=1">◀◀</a>&nbsp;
-							<a href="list?pageNum=${pageDto.startPage-1}">◀</a>
+							<a href="list?pageNum=1" class="pageHref"><div class="pagelink">＜＜</span></a>&nbsp;
+							<a href="list?pageNum=${pageDto.startPage-1}" class="pageHref"><span class="pagelink">＜</span></a>
 							</c:if>
 							&nbsp;&nbsp;
 							<c:forEach var="pageNumber" begin="${pageDto.startPage}" end="${pageDto.endPage }">
 								<c:choose>
 									<c:when test="${currentPage == pageNumber}">
-										<b>${pageNumber}</b>
+										<span class="currPagelink">${pageNumber}</span>&nbsp;
 									</c:when>
 									<c:otherwise>
-										<a href="list?pageNum=${pageNumber}">${pageNumber}</a>&nbsp;
+										<a href="list?pageNum=${pageNumber}" class="pageHref"><span class="pagelink">${pageNumber}</span></a>&nbsp;
 									</c:otherwise>
 								</c:choose>
 							</c:forEach>							
 							&nbsp;&nbsp;
 							<c:if test="${pageDto.next }">	
-							<a href="list?pageNum=${pageDto.endPage+1 }">▶</a>&nbsp;
-							<a href="list?pageNum=${pageDto.realEndPage}">▶▶</a>
+							<a href="list?pageNum=${pageDto.endPage+1 }" class="pageHref"><span class="pagelink">＞</span></a>&nbsp;
+							<a href="list?pageNum=${pageDto.realEndPage}" class="pageHref"><span class="pagelink">＞＞</span></a>
 							</c:if>
 						</td>
 					</tr>

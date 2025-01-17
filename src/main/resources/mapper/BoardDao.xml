@@ -44,5 +44,15 @@
 		SELECT count(*) FROM profileboard
 	</select>
 	
+	<!-- 조회수 1 증가하기 -->
+	<update id="updateHitDao">
+		UPDATE profileboard SET bhit=bhit+1 WHERE bnum=#{param1}
+	</update>
+	
+	
+	
+	
+	
+	
 	
 </mapper>    

@@ -96,6 +96,30 @@ public class MemberController {
 	@GetMapping(value = "/logout")
 	public String logout(HttpSession session, Model model) {
 		
+		if(session.getAttribute("sessionid")==null) { //로그인하지 않은 상태
+			model.addAttribute("msg", "로그인 상태가 아닙니다. 로그인 창으로 이동합니다.");
+			model.addAttribute("url", "login");
+			
+			return "alert/alert";
+		}
+		
+		model.addAttribute("msg", "정말 로그아웃 하시겠습니까?");
+		model.addAttribute("url", "logoutOk");
+		
+		return "alert/confirm";
+	}
+	
+	@GetMapping(value = "/logoutOk")
+	public String logoutOk(HttpSession session, Model model) {
+		
+		if(session.getAttribute("sessionid")==null) { //로그인하지 않은 상태
+			
+			model.addAttribute("msg", "로그인 상태가 아닙니다. 로그인 창으로 이동합니다.");
+			model.addAttribute("url", "login");
+			
+			return "alert/alert";
+		}
+		
 		session.invalidate();//로그아웃
 		
 		model.addAttribute("msg", "로그아웃 하셨습니다. 안녕히가세요.");

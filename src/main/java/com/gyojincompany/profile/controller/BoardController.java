@@ -93,14 +93,18 @@ public class BoardController {
 	public String contentView(HttpServletRequest request, Model model) {
 		
 		String bnum = request.getParameter("bnum");//사용자가 클릭한 글의 번호
-		
+		String currPage = request.getParameter("pageNum");//현재 사용자가 글 제목을 클릭했던 페이지의 번호
 		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		bDao.updateHitDao(bnum);//조회수 1 증가
+		
 		BoardDto bDto = bDao.contentViewDao(bnum);
 		
 		model.addAttribute("bDto", bDto);
+		model.addAttribute("currPage", currPage);
 		
 		return "contentView";
 	}
+	
 	@GetMapping(value = "/contentModify")
 	public String contentModify(HttpServletRequest request, Model model, HttpSession session) {
 		
@@ -168,7 +172,10 @@ public class BoardController {
 		}
 	}
 	
-	
+//	@GetMapping(value = "/confirm")
+//	public String confirm() {
+//		return "alert/confirm";
+//	}
 	
 	
 	

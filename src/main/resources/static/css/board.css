@@ -75,3 +75,37 @@ a.board_link:hover {
 	font-weight: bold;
 	color: inherit;
 }
+
+span.pagelink {	
+	border: 1px solid #b0cff2;
+	background-color: #e3fdff;
+	color: #808080;
+	font-size: 20px;
+	padding: 8px;	
+}
+
+span.currPagelink {
+	font-family: NanumGothic, Arial;
+	border: 1px solid #b0cff2;
+	background-color: #4aa4ec;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 8px;
+}
+
+a.pageHref:link {
+	font-size: 20px;
+	text-decoration: none;
+	font-family: NanumGothic, Arial;
+	color: inherit;
+}
+
+a.pageHref:visited {
+	font-size: 20px;
+	text-decoration: none;
+	font-family: NanumGothic, Arial;
+	color: inherit;
+}
+
+
+
