@@ -69,13 +69,16 @@ public class BoardController {
 		
 		String pageNum = request.getParameter("pageNum");//사용자가 클릭한 게시판 페이지 번호(ex:3페이지)
 		
-		criteria.setPageNum(Integer.parseInt(pageNum));
+		if(pageNum != null) {//그냥 list 요청으로 오면 pageNum->null
+			criteria.setPageNum(Integer.parseInt(pageNum));
+		}
 //		사용자가 클릭한 페이지 번호를 criteria 객체 내의 멤버변수인 pageNum 값으로 설정
 		int total = bDao.totalBoardCountDao();//게시판 내 모든 글의 갯수
 		
 		PageDto pageDto = new PageDto(total, criteria);
 		
-		ArrayList<BoardDto> bDtos = bDao.listDao();//모든 글 가져오기
+		ArrayList<BoardDto> bDtos = bDao.listDao(criteria.getAmount(), criteria.getPageNum());
+		//인수로 한페이지에 보여질 글의 갯수와 사용자가 클릭한 페이지의 번호를 입력해서 호출
 		
 		model.addAttribute("bDtos", bDtos);
 		

@@ -12,9 +12,12 @@
 	
 	<!-- 모든 글 가져오기 -->
 	<select id="listDao" resultType="com.gyojincompany.profile.dto.BoardDto">
-		SELECT * 
-			FROM profileboard
-				ORDER BY bnum DESC
+		SELECT *
+    		FROM
+        		(SELECT A.*, ROWNUM as rnum
+            		FROM
+                		(SELECT * FROM profileboard ORDER BY bnum DESC)A)
+                    		WHERE rnum >= #{param2}*#{param1}-(#{param1}-1) AND rnum <![CDATA[<]]>= #{param2}*#{param1}
 	</select>
 	
 	<!-- 글 번호로 글 가져오기 -->
