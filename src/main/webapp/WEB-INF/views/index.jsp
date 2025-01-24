@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../resources/css/title.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/title.css">
 <title>Profile Web</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
 							<span class="skill_text01">J</span><span class="skill_text02">AVA</span>
 						</td>
 						<td rowspan="6" class="image_box" align="center">
-							<img src="../resources/img/springboot.jpg">
+							<img src="${pageContext.request.contextPath}/resources/img/springboot.jpg">
 						</td>
 					</tr>
 					<tr>

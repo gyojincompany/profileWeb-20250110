@@ -6,9 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../resources/css/title.css">
-<link rel="stylesheet" href="../resources/css/content.css">
-<link rel="stylesheet" href="../resources/css/board.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/title.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/content.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/board.css">
 <title>Profile Web</title>
 </head>
 <body>
@@ -70,7 +70,7 @@
 					<tr>
 						<td colspan="6" align="center">
 							<c:if test="${pageDto.prev }">
-							<a href="list?pageNum=1" class="pageHref"><div class="pagelink">＜＜</span></a>&nbsp;
+							<a href="list?pageNum=1" class="pageHref"><span class="pagelink">＜＜</span></a>&nbsp;
 							<a href="list?pageNum=${pageDto.startPage-1}" class="pageHref"><span class="pagelink">＜</span></a>
 							</c:if>
 							&nbsp;&nbsp;

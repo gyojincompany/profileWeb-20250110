@@ -16,8 +16,8 @@ import com.gyojincompany.profile.dto.Criteria;
 import com.gyojincompany.profile.dto.MemberDto;
 import com.gyojincompany.profile.dto.PageDto;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class BoardController {

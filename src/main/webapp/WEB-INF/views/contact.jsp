@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../resources/css/title.css">
-<link rel="stylesheet" href="../resources/css/content.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/title.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/content.css">
 <title>Profile Web</title>
 </head>
 <body>

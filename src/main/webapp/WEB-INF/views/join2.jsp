@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../resources/css/title.css">
-<link rel="stylesheet" href="../resources/css/content.css">
-<script type="text/javascript" src="../resources/js/join.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/title.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/content.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/join.js"></script>
 <title>Profile Web</title>
 </head>
 <body>

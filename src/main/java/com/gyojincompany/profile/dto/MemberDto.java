@@ -2,13 +2,8 @@ package com.gyojincompany.profile.dto;
 
 import java.sql.Timestamp;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@AllArgsConstructor 
-@NoArgsConstructor
-@Data
+
 public class MemberDto {
 	
 	private String mid;
@@ -16,5 +11,48 @@ public class MemberDto {
 	private String mname;
 	private String memail;
 	private Timestamp mdate;
+	public MemberDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public MemberDto(String mid, String mpw, String mname, String memail, Timestamp mdate) {
+		super();
+		this.mid = mid;
+		this.mpw = mpw;
+		this.mname = mname;
+		this.memail = memail;
+		this.mdate = mdate;
+	}
+	public String getMid() {
+		return mid;
+	}
+	public void setMid(String mid) {
+		this.mid = mid;
+	}
+	public String getMpw() {
+		return mpw;
+	}
+	public void setMpw(String mpw) {
+		this.mpw = mpw;
+	}
+	public String getMname() {
+		return mname;
+	}
+	public void setMname(String mname) {
+		this.mname = mname;
+	}
+	public String getMemail() {
+		return memail;
+	}
+	public void setMemail(String memail) {
+		this.memail = memail;
+	}
+	public Timestamp getMdate() {
+		return mdate;
+	}
+	public void setMdate(Timestamp mdate) {
+		this.mdate = mdate;
+	}
+	
 	
 }

@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.gyojincompany.profile.dao.MemberDao;
 import com.gyojincompany.profile.dto.MemberDto;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class MemberController {

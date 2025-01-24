@@ -1,12 +1,7 @@
 package com.gyojincompany.profile.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
+
 public class PageDto {
 	
 	private int total;//게시판 글의 총 갯수
@@ -38,6 +33,79 @@ public class PageDto {
 		//startPage 값이 1만 아니면 이전으로 돌아가는 화살표가 존재해야 하므로 prev->true
 		this.next = this.realEndPage > this.endPage;
 		//현재 보여지고 있는 페이지 번호의 마지막 페이지값이 총 글의 갯수로 계산한 실제 마지막 페이지보다 작으면 next->true
+	}
+
+	public PageDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public PageDto(int total, int startPage, int endPage, boolean next, boolean prev, int realEndPage,
+			Criteria criteria) {
+		super();
+		this.total = total;
+		this.startPage = startPage;
+		this.endPage = endPage;
+		this.next = next;
+		this.prev = prev;
+		this.realEndPage = realEndPage;
+		this.criteria = criteria;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
+	public int getStartPage() {
+		return startPage;
+	}
+
+	public void setStartPage(int startPage) {
+		this.startPage = startPage;
+	}
+
+	public int getEndPage() {
+		return endPage;
+	}
+
+	public void setEndPage(int endPage) {
+		this.endPage = endPage;
+	}
+
+	public boolean isNext() {
+		return next;
+	}
+
+	public void setNext(boolean next) {
+		this.next = next;
+	}
+
+	public boolean isPrev() {
+		return prev;
+	}
+
+	public void setPrev(boolean prev) {
+		this.prev = prev;
+	}
+
+	public int getRealEndPage() {
+		return realEndPage;
+	}
+
+	public void setRealEndPage(int realEndPage) {
+		this.realEndPage = realEndPage;
+	}
+
+	public Criteria getCriteria() {
+		return criteria;
+	}
+
+	public void setCriteria(Criteria criteria) {
+		this.criteria = criteria;
 	}
 	
 	
